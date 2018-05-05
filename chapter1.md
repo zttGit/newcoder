@@ -137,3 +137,37 @@ public class Solution {
 
 ![](/assets/8788852_1496674193455_D60F8B66AA5C0250BB4D8DDD6DD73335.png)
 
+5.用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+
+### 栈和队列
+
+思路：stack1作为入队列 ，stack2作为出队列，实现先进先出
+
+```java
+import java.util.Stack;
+
+public class Solution {
+    Stack<Integer> stack1 = new Stack<Integer>();
+    Stack<Integer> stack2 = new Stack<Integer>();
+
+    public void push(int node) {
+        stack1.push(node);
+    }
+
+    public int pop() {
+        int n ;
+        if(stack2.empty()){   //如果stack2为空，则stack1的都倒入stack2
+            while(!stack1.empty()){
+            n = stack1.pop();   //从1出栈，倒入2
+            stack2.push(n);
+            }           
+        }
+        //如果不为空，stack2直接出栈
+        n = stack2.pop();
+        return n;
+    }
+}
+```
+
+
+
