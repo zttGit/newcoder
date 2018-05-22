@@ -2,8 +2,6 @@
 
 Online Judge  AC
 
-目录：
-
 [Introduction](README.md)
 
 * [1-5](1-5.md)
